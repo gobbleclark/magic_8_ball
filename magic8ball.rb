@@ -39,8 +39,7 @@ class MagicEight
         puts "2) Add new answers to Magic 8 ball"
         puts "3) Reset me to all original answers"
         puts "4) See all my current answers"
-        puts "5) See all my current questions"
-        puts "6) Exit"
+        puts "5) Exit"
         input = gets.strip.to_i
         case input
         when 1
@@ -52,8 +51,6 @@ class MagicEight
          when 4
             see_answers
          when 5
-            see_questions
-         when 6
             exit_program
          else 
             puts "Invalid Response"
@@ -91,8 +88,8 @@ class MagicEight
         puts "Please select the number of answer that you want to delete.".colorize(:red)
         @auto_responses.each.with_index do |a, i|
             puts "#{i + 1}) #{a}"      end
-        input = gets.strip_to_i
-        input = @auto_responses.delete(input)
+        input = gets.strip.to_i
+        @auto_responses.delete(input)
         puts "You have reset to our default answers.".colorize(:green4)
         puts ""
         puts ""
